@@ -55,7 +55,7 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            rm -rf ${{ secrets.TEST_DIR }}/*
+            rm -rf ${{ secrets.REMOTE_DIR }}/*
         
       # Deploy to remote server
       - name: Deploy React app to server
@@ -67,4 +67,4 @@ jobs:
           rm: false
           source: "build/*"
           strip_components: 1
-          target: ${{ secrets.TEST_DIR }}
+          target: ${{ secrets.REMOTE_DIR }}
