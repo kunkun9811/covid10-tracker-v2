@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      <p>Timo's says Hello :)</p>
+      <h1 data-testid="title">COVID19 Tracker</h1>
     </div>
   );
 }
