@@ -43,9 +43,21 @@ jobs:
       - name: Run the tests
         run: npm test
         
+      # Add temporary environment variable
+      - name: add temporary environment variable
+        run: |
+          touch .env.local
+          echo ${{ secrets.REACT_APP_MAPBOX_TOKEN }} > .env.local
+        
       # Build React application
       - name: Build
         run: npm run build
+        env:
+          CI: false
+        
+      # Remove temporary .env.local file
+      - name: remove .env.local
+        run: rm .env.local
         
       # Remove files at the target directory
       - name: Remove old files in the build directory
