@@ -43,6 +43,12 @@ jobs:
       - name: Run the tests
         run: npm test
         
+      # Add temporary environment variable
+      - name: add temporary environment variable
+        run: |
+          touch .env.local
+          echo ${{ REACT_APP_MAPBOX_TOKEN }} > .env.local
+        
       # Build React application
       - name: Build
         run: npm run build
