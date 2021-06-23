@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div>
-      <h1 data-testid="title">COVID19 Tracker</h1>
+      <h1 data-testid="title">COVID19 Tracker: {process.env.NODE_ENV === "production" ? process.env.MY_TESTING : "In Development"}</h1>
       <HeatMap></HeatMap>
     </div>
   );
