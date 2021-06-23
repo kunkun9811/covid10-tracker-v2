@@ -37,7 +37,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install dependencies
-        run: npm install
+        run: | 
+          npm install
+          npm install --save react-map-gl
         
       # Run tests on React application
       - name: Run the tests
