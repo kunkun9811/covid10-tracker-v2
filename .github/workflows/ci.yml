@@ -37,9 +37,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install dependencies
-        run: | 
-          npm install
-          npm install --save react-map-gl
+        run: npm install
         
       # Run tests on React application
       - name: Run the tests
@@ -54,6 +52,8 @@ jobs:
       # Build React application
       - name: Build
         run: npm run build
+        env:
+          CI: false
         
       # Remove temporary .env.local file
       - name: remove .env.local
