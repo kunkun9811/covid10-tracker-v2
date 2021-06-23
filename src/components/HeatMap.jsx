@@ -14,7 +14,7 @@ function HeatMap() {
     <div>
       <ReactMapGL
         {...viewport}
-        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+        mapboxApiAccessToken={process.env.NODE_ENV === "production" ? process.env.MAP_BOX_TOKEN : process.env.REACT_APP_MAPBOX_TOKEN}
         mapStyle="mapbox://styles/springkun/ckq8p5a2512vd19q0w156ebkt"
         onViewportChange={(NewViewport) => {
           setViewport(NewViewport);
